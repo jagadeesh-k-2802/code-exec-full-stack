@@ -1,0 +1,22 @@
+.header__nav {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: relative;
+}
+
+.header__nav__logo-container {
+  display: inline-flex;
+  color: inherit;
+  font-weight: bolder;
+}
+
+.header__nav ul {
+  list-style-type: none;
+}
+
+.header__nav ul li a {
+  text-decoration: underline;
+  color: inherit;
+}

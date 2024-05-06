@@ -1,0 +1,43 @@
+.hero-page {
+  height: 100vh;
+}
+
+.hero-page__background {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.6;
+  background-image: url('/background.jpg');
+  background-size: 1500px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: blur(3px);
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.hero-page__hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-page__hero-content__cta {
+  padding: 10px 15px;
+  background-color: aliceblue;
+  color: #000;
+  margin: 30px 0;
+  border-radius: 5px;
+}
