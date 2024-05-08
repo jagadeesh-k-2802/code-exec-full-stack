@@ -43,6 +43,18 @@
   display: none;
 }
 
+.code-page__editor__sidebar__output_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.code-page__editor__sidebar__output_title__control {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .code-page__editor__sidebar__output__textarea {
   margin: 10px 0;
   min-height: 250px;

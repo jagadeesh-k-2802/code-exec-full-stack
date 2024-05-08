@@ -6,7 +6,8 @@
   "main": "server.ts",
   "scripts": {
     "start": "tsx server.ts",
-    "dev": "nodemon --exec tsx server.ts"
+    "dev:server": "nodemon --exec tsx server.ts",
+    "dev:consumer": "nodemon --exec tsx consumer.ts --ignore *.json"
   },
   "keywords": [],
   "author": "Jagadeesh",
@@ -22,12 +23,17 @@
     "typescript-eslint": "^7.0.1"
   },
   "dependencies": {
+    "@types/amqplib": "^0.10.5",
+    "amqplib": "^0.10.4",
+    "colors": "^1.4.0",
     "colors.ts": "^1.0.20",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "express-rate-limit": "^7.1.5",
     "formidable": "^3.5.1",
     "jsonwebtoken": "^9.0.2",
+    "lowdb": "^7.0.1",
+    "lowdb-node": "^3.0.2",
     "morgan": "^1.10.0",
     "uuid": "^9.0.1",
     "zod": "^3.22.4",

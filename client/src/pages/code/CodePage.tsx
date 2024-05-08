@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Editor, { useMonaco } from '@monaco-editor/react';
 import Header from '../../components/Header/Header';
 import sendExecuteRequest from './sendExecuteRequest';
 import getDefaultLanguageCode from './getDefaultLanguageCode';
+import { useDebounce } from '../../hooks/useDebounce';
 import './CodePage.css';
 
 const CodePage = () => {
   const monaco = useMonaco();
+  const [autoRun, setAutoRun] = useState(false);
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [time, setTime] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const language = searchParams.get('language') || 'javascript';
 
-  const onExecute = () => {
+  const onCodeChange = useDebounce<string, (value: string | undefined) => void>(
+    () => (autoRun ? onExecute() : null),
+    1000
+  );
+
+  const onExecute = useCallback(() => {
     if (monaco) {
       const code = monaco.editor.getEditors()[0].getValue();
 
@@ -29,7 +36,21 @@ const CodePage = () => {
         }
       })();
     }
-  };
+  }, [input, language, monaco]);
+
+  useEffect(() => {
+    if (localStorage.getItem('autoRun') !== null) setAutoRun(true);
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === 'Enter') onExecute();
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [onExecute]);
 
   return (
     <section className="code-page">
@@ -40,6 +61,7 @@ const CodePage = () => {
           height="90vh"
           width="75%"
           theme="vs-dark"
+          onChange={onCodeChange}
           defaultLanguage={language}
           defaultValue={getDefaultLanguageCode(language)}
           options={{ fontSize: 16 }}
@@ -57,7 +79,22 @@ const CodePage = () => {
           </div>
 
           <div className="code-page__editor__sidebar__output">
-            <h4>Output {time || ''}</h4>
+            <div className="code-page__editor__sidebar__output_title">
+              <h4>Output {time || ''}</h4>
+
+              <div className="code-page__editor__sidebar__output_title__control">
+                <label>Auto Run:</label>
+                <input
+                  type="checkbox"
+                  checked={autoRun}
+                  onChange={e => {
+                    setAutoRun(e.target.checked);
+                    if (e.target.checked) localStorage.setItem('autoRun', '1');
+                    else localStorage.removeItem('autoRun');
+                  }}
+                />
+              </div>
+            </div>
             <textarea
               readOnly
               value={output}
@@ -66,7 +103,9 @@ const CodePage = () => {
           </div>
 
           <div className="code-page__editor__sidebar__button">
-            <button onClick={onExecute}>Execute &gt;</button>
+            <button onClick={onExecute} title="CTRL + Enter">
+              Execute &gt;
+            </button>
           </div>
         </div>
       </div>

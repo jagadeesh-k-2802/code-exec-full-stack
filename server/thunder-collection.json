@@ -1,0 +1,53 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "CodeExec",
+    "collectionId": "9f0f18a9-3115-46db-b220-681ff4f8f8f4",
+    "dateExported": "2024-05-08T16:47:41.837Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "b39ab55c-bf36-457f-b474-78605ed53851",
+            "name": "code",
+            "containerId": "",
+            "created": "2024-04-02T14:39:35.756Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "dea48190-26d5-418e-bd01-7cfe8ebc9168",
+            "colId": "9f0f18a9-3115-46db-b220-681ff4f8f8f4",
+            "containerId": "b39ab55c-bf36-457f-b474-78605ed53851",
+            "name": "upload",
+            "url": "{{API_URL}}/code/upload",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-02T14:39:38.732Z",
+            "modified": "2024-05-08T16:36:08.242Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"language\": \"python\",\n  \"code\": \"print(int(input()) + int(input()))\",\n  \"input\": \"5\\n5\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "28a995cf-1881-424b-88d7-a272c8d44f99",
+            "colId": "9f0f18a9-3115-46db-b220-681ff4f8f8f4",
+            "containerId": "b39ab55c-bf36-457f-b474-78605ed53851",
+            "name": "status",
+            "url": "{{API_URL}}/code/status/3c254af4-8667-4cb6-963e-49c1a7ab8015",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-08T16:32:42.365Z",
+            "modified": "2024-05-08T16:46:30.316Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"language\": \"python\",\n  \"code\": \"print(int(input()) + int(input()))\",\n  \"input\": \"5\\n5\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "hyERgxufmWQZn_Op7rv7lzNnvY-rEFsaw9vQdGBqSFXi5cjSTOOA3f7t0v4WRf3DWS2Ml1lN9fhknOLESDx8Og"
+}
