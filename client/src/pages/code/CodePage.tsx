@@ -1,14 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Editor, { useMonaco } from '@monaco-editor/react';
 import Header from '../../components/Header/Header';
-import sendExecuteRequest from './sendExecuteRequest';
 import getDefaultLanguageCode from './getDefaultLanguageCode';
 import { useDebounce } from '../../hooks/useDebounce';
+import { sendExecuteRequest, fetchExecutionStatus } from '../../services/api';
 import './CodePage.css';
 
 const CodePage = () => {
   const monaco = useMonaco();
+  const interval = useRef<number | null>(null);
   const [autoRun, setAutoRun] = useState(false);
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -29,14 +30,25 @@ const CodePage = () => {
         try {
           setOutput('Loading...');
           const response = await sendExecuteRequest({ code, language, input });
-          setOutput(response.output);
-          setTime(`(${response.time.toFixed(2)}) ms`);
+          const id = response.id;
+
+          interval.current = setInterval(() => {
+            (async () => {
+              const data = await fetchExecutionStatus(id);
+
+              if (data.isDone) {
+                setTime(`${data.time?.toFixed(2)} ms` || time);
+                setOutput(data.output || output);
+                if (interval.current !== null) clearInterval(interval.current);
+              }
+            })();
+          }, 1000);
         } catch (error) {
           setOutput('Something went wrong...');
         }
       })();
     }
-  }, [input, language, monaco]);
+  }, [input, language, monaco, output, time]);
 
   useEffect(() => {
     if (localStorage.getItem('autoRun') !== null) setAutoRun(true);
@@ -49,6 +61,7 @@ const CodePage = () => {
 
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
+      if (interval.current !== null) clearInterval(interval.current);
     };
   }, [onExecute]);
 

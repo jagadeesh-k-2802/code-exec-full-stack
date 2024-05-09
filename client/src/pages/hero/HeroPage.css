@@ -34,6 +34,16 @@
   transform: translate(-50%, -50%);
 }
 
+.hero-page__hero-content h1 {
+  font-size: 3.25rem;
+  text-align: center;
+}
+
+.hero-page__hero-content p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 .hero-page__hero-content__cta {
   padding: 10px 15px;
   background-color: aliceblue;
