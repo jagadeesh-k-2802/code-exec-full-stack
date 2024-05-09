@@ -1,7 +1,6 @@
 # CodeExec 💻⚙️
 
-CodeExec is a Full Stack Web Application Built With React, Node.js to Execute User
-Entered Program and Give Output
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/718ddf45-3cec-4332-b79a-3cb650c94d95" width="750" />
 
 ## Features 📲
 
@@ -22,3 +21,8 @@ Entered Program and Give Output
 - `cd client` and run `npm i` to install npm packages
 - `npm run dev` to start local development react server
 
+## Screenshots 📷
+
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/a187c3fb-d501-4c6b-8b4a-77e44f0b3af8" width="400" />
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/140f9e9e-6605-4289-91d9-05795854b54a" width="400" />
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/17a7179b-c7ee-4900-b7b9-df461841aa18" width="400" />
