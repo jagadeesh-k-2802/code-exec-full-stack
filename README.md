@@ -21,6 +21,12 @@
 - `cd client` and run `npm i` to install npm packages
 - `npm run dev` to start local development react server
 
+## Disclaimer ⚠️
+
+Executing a user given code and input on our server is really dangerous security issue
+if not handled properly the user can execute malicious code so make sure the consumer
+process is running inside a container where everything is restricted and causes no harm.
+
 ## Screenshots 📷
 
 <img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/a187c3fb-d501-4c6b-8b4a-77e44f0b3af8" width="400" />
