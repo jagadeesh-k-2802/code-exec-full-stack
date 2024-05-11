@@ -19,6 +19,7 @@
 - `npm run dev:server` to start the node server
 - `npm run dev:consumer` to start queue consumer node process
 - `cd client` and run `npm i` to install npm packages
+- `thunder-client-collection.json` contains API docs and can be loaded with [Thunder Client Extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
 - `npm run dev` to start local development react server
 
 ## Disclaimer ⚠️
@@ -29,9 +30,9 @@ process is running inside a container where everything is restricted and causes 
 
 ## Screenshots 📷
 
-<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/a187c3fb-d501-4c6b-8b4a-77e44f0b3af8" width="400" />
-<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/140f9e9e-6605-4289-91d9-05795854b54a" width="400" />
-<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/17a7179b-c7ee-4900-b7b9-df461841aa18" width="400" />
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/a187c3fb-d501-4c6b-8b4a-77e44f0b3af8" width="500" />
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/140f9e9e-6605-4289-91d9-05795854b54a" width="500" />
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/17a7179b-c7ee-4900-b7b9-df461841aa18" width="500" />
 
 ## Screen Record 📽️
 

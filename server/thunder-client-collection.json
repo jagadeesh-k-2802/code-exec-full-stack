@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "CodeExec",
     "collectionId": "9f0f18a9-3115-46db-b220-681ff4f8f8f4",
-    "dateExported": "2024-05-08T16:47:41.837Z",
+    "dateExported": "2024-05-11T00:34:30.213Z",
     "version": "1.2",
     "folders": [
         {
@@ -36,18 +36,13 @@
             "colId": "9f0f18a9-3115-46db-b220-681ff4f8f8f4",
             "containerId": "b39ab55c-bf36-457f-b474-78605ed53851",
             "name": "status",
-            "url": "{{API_URL}}/code/status/3c254af4-8667-4cb6-963e-49c1a7ab8015",
-            "method": "POST",
+            "url": "{{API_URL}}/code/status/477370a0-1a27-4132-a01f-9c10115debb8",
+            "method": "GET",
             "sortNum": 20000,
             "created": "2024-05-08T16:32:42.365Z",
-            "modified": "2024-05-08T16:46:30.316Z",
-            "headers": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"language\": \"python\",\n  \"code\": \"print(int(input()) + int(input()))\",\n  \"input\": \"5\\n5\"\n}",
-                "form": []
-            }
+            "modified": "2024-05-09T15:14:33.250Z",
+            "headers": []
         }
     ],
-    "ref": "hyERgxufmWQZn_Op7rv7lzNnvY-rEFsaw9vQdGBqSFXi5cjSTOOA3f7t0v4WRf3DWS2Ml1lN9fhknOLESDx8Og"
+    "ref": "hyERgxufmWQZn_Op7rv7lx5th6gTdaseouwG4y245iy6saFc-ka_uKs2nEVlU6gN9Xo90OUAuMO7RSx0-9gXVw"
 }
