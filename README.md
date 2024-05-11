@@ -22,11 +22,12 @@
 - `thunder-client-collection.json` contains API docs and can be loaded with [Thunder Client Extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
 - `npm run dev` to start local development react server
 
-## Disclaimer ⚠️
+<br />
 
-Executing a user given code and input on our server is really dangerous security issue
-if not handled properly the user can execute malicious code so make sure the consumer
-process is running inside a container where everything is restricted and causes no harm.
+> [!WARNING] 
+> Executing a user given code and input on our server is really dangerous security issue
+> if not handled properly the user can execute malicious code so make sure the consumer
+> process is running inside a container where everything is restricted and causes no harm.
 
 ## Screenshots 📷
 
