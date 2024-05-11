@@ -8,6 +8,10 @@
 - Auto Run feature Executes Code As the User Makes Changes to Code
 - Uses Queue to process requests with fault tolerance and scalability
 
+## Architecture 📄
+
+<img src="https://github.com/jagadeesh-k-2802/code-exec-full-stack/assets/63912668/6234c383-9eee-4ced-95d4-fdb1798ed765" width="600" />
+
 ## Running The Application 🧑🏻‍💻
 
 - `git clone https://github.com/jagadeesh-k-2802/code-exec-full-stack`
